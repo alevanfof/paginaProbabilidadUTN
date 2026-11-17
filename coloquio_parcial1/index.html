@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Coloquio Parcial 1 — Probabilidad y Estadística</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Barra de control flotante (solo visible en modo flotante) -->
+<div id="floatBar" class="float-bar" role="toolbar" aria-label="Controles de ventana flotante">
+  <div class="float-drag" id="floatDrag" aria-label="Arrastrar ventana" title="Arrastrar para mover">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9l7-7 7 7"/><path d="M5 15l7 7 7-7"/></svg>
+  </div>
+  <div class="float-controls">
+    <label class="opacity-control" title="Opacidad">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <input type="range" id="opacitySlider" min="30" max="100" value="95" step="5" aria-label="Opacidad de la ventana">
+    </label>
+    <button id="compactToggle" class="icon-btn" aria-pressed="false" title="Modo compacto (solo botones)">
+      <svg class="icon-full" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+      <svg class="icon-compact" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+    </button>
+    <button id="exitFloat" class="icon-btn" title="Salir modo flotante">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+</div>
+
+<header class="cabecera" id="header">
+  <p class="kicker">Coloquio Parcial 1</p>
+  <h1>Probabilidad y Estadística · Unidades 1 y 2</h1>
+  <p class="bajada">Tocá una pregunta para escuchar la respuesta clave.</p>
+  <button id="enterFloat" class="float-trigger" title="Activar ventana flotante transparente">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/><rect x="2" y="2" width="10" height="10" rx="2"/><rect x="12" y="12" width="10" height="10" rx="2"/></svg>
+    <span>Flotante</span>
+  </button>
+</header>
+
+<main id="grid" class="grid" aria-label="Preguntas del coloquio"></main>
+
+<footer class="pie" id="footer">
+  <div class="estado" aria-live="polite">
+    <span id="estado-titulo" class="estado-titulo">Elegí una pregunta</span>
+    <span id="estado-tiempo" class="estado-tiempo"></span>
+  </div>
+  <div class="progreso" aria-hidden="true"><div id="progreso-barra" class="progreso-barra"></div></div>
+  <p class="ayuda">Tocar: reproducir / pausar · Mantener: reiniciar · Deslizar: ±5 s</p>
+</footer>
+
+<script src="tracks.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

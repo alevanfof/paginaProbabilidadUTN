@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Test Grid</title>
+<style>
+:root {
+  --bg: #0b1220;
+  --fg: #e8edf5;
+  --muted: #94a3b8;
+  --accent: #0ea5e9;
+  --card: #111827;
+  --border: #1f2a44;
+  --btn-size: clamp(70px, 18vw, 100px);
+  --gap: 12px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.cabecera {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.grid {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--btn-size), 1fr));
+  gap: var(--gap);
+  justify-content: center;
+  align-content: flex-start;
+  -webkit-overflow-scrolling: touch;
+}
+.arg {
+  --size: var(--btn-size);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 6px;
+  text-align: center;
+  gap: 2px;
+  touch-action: manipulation;
+}
+.arg .num { font-size: clamp(.7rem, 2vw, .9rem); font-weight: 800; color: var(--accent); }
+.arg .titulo { font-size: clamp(.6rem, 1.7vw, .78rem); font-weight: 600; }
+.arg .sub { font-size: clamp(.5rem, 1.4vw, .62rem); color: var(--muted); }
+</style>
+</head>
+<body>
+<header class="cabecera">
+  <h1>Test Grid - Deberías ver 32 botones circulares</h1>
+</header>
+<main id="grid" class="grid"></main>
+<script>
+const grid = document.getElementById('grid');
+for (let i = 1; i <= 32; i++) {
+  const b = document.createElement('button');
+  b.className = 'arg';
+  b.innerHTML = `<span class="num">${String(i).padStart(2,'0')}</span><span class="titulo">Pregunta ${i}</span><span class="sub">U${i <= 17 ? 1 : 2}</span>`;
+  grid.appendChild(b);
+}
+console.log('Grid rendered, buttons:', grid.children.length);
+</script>
+</body>
+</html>

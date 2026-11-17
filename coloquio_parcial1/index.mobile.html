@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0ea5e9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="icons/icon-192.svg">
+<link rel="apple-touch-icon" href="icons/icon-192.svg">
+<title>Coloquio Parcial 1 — Probabilidad y Estadística</title>
+<link rel="stylesheet" href="styles.mobile.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <p class="kicker">Coloquio Parcial 1</p>
+  <h1>Probabilidad y Estadística · Unidades 1 y 2</h1>
+  <p class="bajada">Tocá una pregunta para escuchar la respuesta clave.</p>
+</header>
+
+<main id="grid" class="grid" aria-label="Preguntas del coloquio"></main>
+
+<footer class="pie">
+  <div class="estado" aria-live="polite">
+    <span id="estado-titulo" class="estado-titulo">Elegí una pregunta</span>
+    <span id="estado-tiempo" class="estado-tiempo"></span>
+  </div>
+  <div class="progreso" aria-hidden="true"><div id="progreso-barra" class="progreso-barra"></div></div>
+  <p class="ayuda">Tocar: reproducir / pausar · Mantener: reiniciar · Deslizar: ±5 s</p>
+</footer>
+
+<!-- Reproductor de audio oculto -->
+<audio id="audio" preload="metadata" playsinline></audio>
+
+<script src="tracks.js"></script>
+<script src="app.mobile.js"></script>
+<script>
+  // Registrar Service Worker para PWA offline
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(console.error);
+  }
+</script>
+</body>
+</html>

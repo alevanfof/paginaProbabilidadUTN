@@ -1,0 +1,198 @@
+{
+  "voz": "es-AR-ElenaNeural",
+  "velocidad": "+0%",
+  "pistas": [
+    {
+      "id": "01",
+      "titulo": "Población vs Muestra",
+      "subtitulo": "U1",
+      "texto": "La población son todos los elementos que te interesan. La muestra es la parte que lográs observar. Cada elemento individual es una unidad elemental. Si medís a todos, eso es un censo."
+    },
+    {
+      "id": "02",
+      "titulo": "Muestra representativa",
+      "subtitulo": "U1",
+      "texto": "Una muestra representativa refleja a la población. No alcanza con que sea grande: importa cómo se eligió. Si la selección fue sesgada, la muestra no sirve aunque tenga miles de casos."
+    },
+    {
+      "id": "03",
+      "titulo": "Variable estadística",
+      "subtitulo": "U1",
+      "texto": "La variable es lo que cambia de un elemento a otro. En peso de los alumnos, cada alumno es la unidad elemental y el peso es la variable."
+    },
+    {
+      "id": "04",
+      "titulo": "Cualitativa vs Cuantitativa",
+      "subtitulo": "U1",
+      "texto": "Cualitativa son categorías: nominal si no hay orden, ordinal si hay jerarquía. Cuantitativa son números: discreta si surge de contar, continua si surge de medir."
+    },
+    {
+      "id": "05",
+      "titulo": "Código numérico no es cuantitativa",
+      "subtitulo": "U1",
+      "texto": "Si usás números como etiquetas: uno igual casa, dos igual depto, tres igual pieza, la variable sigue siendo cualitativa nominal. El código no la vuelve cuantitativa."
+    },
+    {
+      "id": "06",
+      "titulo": "Escalas de medición",
+      "subtitulo": "U1",
+      "texto": "Nominal solo distingue categorías. Ordinal agrega orden. Intervalo permite restar pero el cero es arbitrario, como en Celsius. Razón tiene cero absoluto, así que podés decir el doble o la mitad, como en tiempo o ingreso."
+    },
+    {
+      "id": "07",
+      "titulo": "Frecuencias absoluta, relativa, acumulada",
+      "subtitulo": "U1",
+      "texto": "La absoluta cuenta cuántas. La relativa es la proporción sobre el total. Las acumuladas van sumando las anteriores, pero solo tienen sentido si hay un orden."
+    },
+    {
+      "id": "08",
+      "titulo": "Datos no agrupados vs agrupados",
+      "subtitulo": "U1",
+      "texto": "Pocos valores: no agrupados. Muchos valores o variable continua: se agrupan en intervalos. La marca de clase es el punto medio del intervalo y representa a todos los valores de esa clase. La amplitud es el ancho del intervalo."
+    },
+    {
+      "id": "09",
+      "titulo": "Regla de Sturges",
+      "subtitulo": "U1",
+      "texto": "Sturges te da una cantidad razonable de clases para no quedarte ni muy corto ni muy largo. Es un criterio sistemático, no una verdad única."
+    },
+    {
+      "id": "10",
+      "titulo": "Interpretar tabla de frecuencias",
+      "subtitulo": "U1",
+      "texto": "La frecuencia absoluta indica cuántas observaciones tienen ese valor. La relativa es la proporción del total. La acumulada suma las frecuencias hasta ese valor inclusive."
+    },
+    {
+      "id": "11",
+      "titulo": "Media vs Mediana vs Moda",
+      "subtitulo": "U1",
+      "texto": "La media es el centro de gravedad, usa todos los valores pero se mueve con los extremos. La mediana es el valor del medio al ordenar, resiste outliers. La moda es lo que más se repite, y es la única que sirve para cualitativas."
+    },
+    {
+      "id": "12",
+      "titulo": "Asimetría y medidas de centro",
+      "subtitulo": "U1",
+      "texto": "En simétricas las tres quedan cerca. En asimetría positiva, cola a la derecha, la media se va para arriba: media mayor que mediana mayor que moda. En negativa pasa lo inverso. En asimétricas la mediana describe mejor lo típico."
+    },
+    {
+      "id": "13",
+      "titulo": "Rango, varianza, desvío, coeficiente de variación",
+      "subtitulo": "U1",
+      "texto": "El rango es solo max menos min. La varianza promedia los desvíos al cuadrado, en muestras se divide por n menos uno. El desvío es la raíz de la varianza y vuelve a las unidades originales. El coeficiente de variación es el desvío sobre la media en porcentaje: sirve para comparar dispersión relativa entre cosas con escalas distintas."
+    },
+    {
+      "id": "14",
+      "titulo": "Cuartiles, percentiles, rango intercuartílico",
+      "subtitulo": "U1",
+      "texto": "El primer cuartil deja el 25 por ciento abajo, el segundo es la mediana, el tercero deja el 75. Los percentiles generalizan: el 90 deja el 90 por ciento abajo. El rango intercuartílico es Q3 menos Q1: mide la dispersión del 50 por ciento central y no se rompe con outliers."
+    },
+    {
+      "id": "15",
+      "titulo": "Medidas para datos agrupados",
+      "subtitulo": "U1",
+      "texto": "Cuando ya tenés la tabla con intervalos, usás la marca de clase como valor representativo y ponderás por las frecuencias. La media es promedio ponderado. La mediana se busca en la clase donde la acumulada pasa la mitad y se interpola. Varianza y desvío se calculan igual pero con las marcas."
+    },
+    {
+      "id": "16",
+      "titulo": "Gráficos: barras vs histograma",
+      "subtitulo": "U1",
+      "texto": "Barras para categóricas o discretas: las barras están separadas porque son categorías independientes. Histograma para continuas agrupadas: las barras se tocan porque los intervalos forman una escala continua. Circular para proporciones de pocas categorías."
+    },
+    {
+      "id": "17",
+      "titulo": "Boxplot y atípicos",
+      "subtitulo": "U1",
+      "texto": "La caja va de Q1 a Q3, ahí está el 50 por ciento central. La mediana es la línea adentro. Los bigotes llegan hasta 1,5 veces el rango intercuartílico; lo que queda afuera son valores atípicos. Poner varios boxplots juntos permite comparar grupos."
+    },
+    {
+      "id": "18",
+      "titulo": "Combinatorio: tres preguntas clave",
+      "subtitulo": "U2",
+      "texto": "Para elegir fórmula hay tres criterios: si importa el orden, si usás todos los elementos, si se permite repetir. Permutación: ordenás todo sin repetir. Variación simple: elegís algunos, el orden importa, no repetís. Variación con repetición: elegís algunos, el orden importa, podés repetir. Combinación: elegís algunos, el orden no importa."
+    },
+    {
+      "id": "19",
+      "titulo": "Permutación, variación, combinación",
+      "subtitulo": "U2",
+      "texto": "Permutación es n factorial. Variación simple es n factorial sobre n menos k factorial. Variación con repetición es n a la k. Combinación es n factorial sobre k factorial por n menos k factorial."
+    },
+    {
+      "id": "20",
+      "titulo": "Experimento aleatorio y espacio muestral",
+      "subtitulo": "U2",
+      "texto": "Determinista: mismas condiciones, mismo resultado. Aleatorio: puede dar resultados distintos. El espacio muestral es el conjunto de todos los resultados posibles. Un suceso es cualquier subconjunto. El imposible es el vacío, el seguro es todo el espacio."
+    },
+    {
+      "id": "21",
+      "titulo": "Operaciones entre sucesos",
+      "subtitulo": "U2",
+      "texto": "Intersección: ocurren los dos a la vez. Unión: ocurre uno, el otro, o ambos. Complemento: no ocurre. Diferencia: ocurre el primero pero no el segundo. Incompatibles: no pueden ocurrir juntos, su intersección es vacía."
+    },
+    {
+      "id": "22",
+      "titulo": "Probabilidad clásica vs frecuencial",
+      "subtitulo": "U2",
+      "texto": "Clásica o de Laplace: espacio finito y todos los resultados igualmente probables. Probabilidad es casos favorables sobre casos totales. Frecuencial: repetís muchas veces, la frecuencia relativa se estabiliza alrededor de la probabilidad."
+    },
+    {
+      "id": "23",
+      "titulo": "Axiomas y reglas básicas",
+      "subtitulo": "U2",
+      "texto": "Tres axiomas: la probabilidad nunca es negativa. El espacio seguro tiene probabilidad uno. Si son incompatibles, la probabilidad de la unión es la suma. De ahí salen: probabilidad entre cero y uno, imposible es cero, complemento es uno menos la probabilidad. Para unión general se suma y se resta la intersección porque se contó dos veces."
+    },
+    {
+      "id": "24",
+      "titulo": "Probabilidad condicional",
+      "subtitulo": "U2",
+      "texto": "Es la probabilidad de A sabiendo que pasó B. El universo se reduce a B. A dado B no es lo mismo que B dado A, porque el denominador cambia."
+    },
+    {
+      "id": "25",
+      "titulo": "Regla del producto",
+      "subtitulo": "U2",
+      "texto": "La intersección es probabilidad de A por probabilidad de B dado A. Sin reposición: después de la primera extracción cambia la composición, hay dependencia. Con reposición: la composición vuelve a ser la misma, puede dar independencia."
+    },
+    {
+      "id": "26",
+      "titulo": "Sucesos independientes",
+      "subtitulo": "U2",
+      "texto": "Son independientes si saber que pasó uno no cambia la probabilidad del otro. En la práctica: si la intersección es igual al producto de las marginales, son independientes."
+    },
+    {
+      "id": "27",
+      "titulo": "Probabilidad total",
+      "subtitulo": "U2",
+      "texto": "El mismo suceso puede pasar por varias causas excluyentes que cubren todo el espacio. La probabilidad total suma la probabilidad de cada causa por la probabilidad del suceso dentro de esa causa."
+    },
+    {
+      "id": "28",
+      "titulo": "Regla de Bayes",
+      "subtitulo": "U2",
+      "texto": "Bayes invierte la condicional. Tenés varias causas posibles y la probabilidad de ver un resultado bajo cada una. Observás el resultado y querés saber cuál causa es más plausible. La posterior es la prior por la verosimilitud, dividido la probabilidad total."
+    },
+    {
+      "id": "29",
+      "titulo": "Incompatibles vs Independientes",
+      "subtitulo": "U2",
+      "texto": "Incompatibles: no pasan juntos, intersección vacía, suma de probabilidades. Independientes: uno no cambia la chance del otro, producto de probabilidades. Son cosas distintas: dos sucesos pueden ser incompatibles pero no independientes, o viceversa."
+    },
+    {
+      "id": "30",
+      "titulo": "Tabla doble entrada: simple, intersección, condicional",
+      "subtitulo": "U2",
+      "texto": "Probabilidad simple: celda sobre total. Intersección: fila y columna sobre total. Condicional: celda sobre total de la fila o columna que te condiciona. El universo se reduce al margen que te dan."
+    },
+    {
+      "id": "31",
+      "titulo": "Prior vs Posterior en Bayes",
+      "subtitulo": "U2",
+      "texto": "La prior es lo que creés antes de ver la evidencia. La posterior es lo que creés después de verla. Bayes actualiza tus creencias con la información nueva."
+    },
+    {
+      "id": "32",
+      "titulo": "TAI: población, muestra, variable",
+      "subtitulo": "U1",
+      "texto": "En el TAI de la EPH Gran Córdoba: la población son los hogares del aglomerado 13. La muestra son los 330 hogares del archivo. Cada hogar es la unidad elemental. La variable depende del análisis: ingreso, tipo de vivienda, lo que estés estudiando."
+    }
+  ]
+}

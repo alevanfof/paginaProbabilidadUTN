@@ -1,0 +1,267 @@
+/* Coloquio Parcial 1 - estilos con modo flotante transparente */
+
+:root {
+  --bg: #0b1220;
+  --bg-suave: #101a2b;
+  --superficie: #151f31;
+  --linea: #2b3b54;
+  --texto: #e9eef6;
+  --tenue: #8fa1b8;
+  --acento: #e0b355;
+  --acento-ink: #1d1607;
+  --btn: min(28vw, 14vh, 120px);
+  --gap: clamp(6px, 1.4vh, 12px);
+  --cols-portrait: 3;
+  --header-h: auto;
+  --footer-h: auto;
+  --float-bar-h: 40px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  min-height: 100dvh;
+  padding: 0;
+  background: transparent;
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Fondo base solo cuando NO es flotante */
+body:not(.floating) {
+  background:
+    radial-gradient(120% 60% at 50% 0%, #16233a 0%, rgba(11, 18, 32, 0) 62%),
+    linear-gradient(180deg, #0c1424 0%, #0a1019 100%);
+  padding: max(12px, env(safe-area-inset-top)) 12px max(10px, env(safe-area-inset-bottom));
+  overflow: auto;
+  touch-action: auto;
+}
+
+/* ---------- Barra flotante - TODA arrastrable ---------- */
+.float-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--float-bar-h);
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  background: rgba(11, 18, 32, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linea);
+  z-index: 1000;
+  user-select: none;
+  /* Electron: toda la barra arrastrable */
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+}
+
+body.floating .float-bar { display: flex; }
+
+/* Los botones DENTRO de la barra NO deben ser arrastrables */
+.float-bar * {
+  -webkit-app-region: no-drag;
+}
+
+.float-drag {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: grab;
+  border-radius: 8px;
+  color: var(--tenue);
+  transition: background 0.15s, color 0.15s;
+}
+.float-drag:hover { background: rgba(255,255,255,0.1); color: var(--texto); }
+.float-drag:active { cursor: grabbing; background: rgba(255,255,255,0.15); }
+
+.float-controls { display: flex; align-items: center; gap: 8px; }
+
+.opacity-control {
+  display: flex; align-items: center; gap: 6px;
+  color: var(--tenue);
+  font-size: 12px;
+}
+.opacity-control input[type="range"] {
+  width: 100px; height: 4px;
+  -webkit-appearance: none; appearance: none;
+  background: var(--linea); border-radius: 2px; outline: none;
+}
+.opacity-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 14px; height: 14px;
+  background: var(--acento); border-radius: 50%; cursor: pointer;
+}
+
+.icon-btn {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  border: none; border-radius: 8px;
+  background: transparent; color: var(--tenue);
+  cursor: pointer; transition: background 0.15s, color 0.15s;
+}
+.icon-btn:hover { background: rgba(255,255,255,0.1); color: var(--texto); }
+.icon-btn[aria-pressed="true"] { color: var(--acento); }
+
+/* ---------- Header ---------- */
+.cabecera {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  padding: clamp(10px, 2vh, 18px) 12px clamp(6px, 1.5vh, 12px);
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.kicker {
+  color: var(--acento);
+  font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+}
+
+.cabecera h1 {
+  margin-top: 3px;
+  font-size: clamp(14px, 4vw, 18px); font-weight: 600; letter-spacing: 0.01em; line-height: 1.2;
+}
+
+.bajada { margin-top: 4px; color: var(--tenue); font-size: clamp(10px, 2.6vw, 11.5px); }
+
+.float-trigger {
+  margin-top: 10px;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: 20px;
+  border: 1px solid var(--linea); background: var(--superficie);
+  color: var(--tenue); font-size: 11px; font-weight: 600; cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.float-trigger:hover { border-color: var(--acento); color: var(--acento); background: rgba(224,179,85,0.1); }
+
+/* ---------- Grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols-portrait), var(--btn));
+  gap: var(--gap);
+  justify-content: center;
+  align-content: start;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: calc((var(--btn) * var(--cols-portrait)) + (var(--gap) * (var(--cols-portrait) - 1)));
+  padding: 0 12px 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Sin scrollbar visible */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* Drag-to-scroll cursor */
+  cursor: grab;
+}
+.grid:active { cursor: grabbing; }
+.grid::-webkit-scrollbar { display: none; }
+
+/* Modo compacto: grid ocupa todo, sin padding extra */
+body.compact .grid {
+  align-content: center;
+  padding: var(--gap);
+  max-width: none;
+}
+
+/* Botón circular */
+.arg {
+  position: relative;
+  width: var(--btn); height: var(--btn);
+  border-radius: 50%;
+  border: 1px solid var(--linea);
+  background: var(--superficie);
+  color: var(--texto);
+  font-family: inherit;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: calc(var(--btn) * 0.015);
+  padding: 12%; text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none;
+  user-select: none; touch-action: manipulation;
+  outline: none;
+}
+.arg:focus-visible { box-shadow: 0 0 0 3px rgba(224,179,85,0.55); }
+
+.arg .num { color: var(--tenue); font-size: calc(var(--btn) * 0.07); font-weight: 700; letter-spacing: 0.12em; line-height: 1; }
+.arg .titulo { font-size: calc(var(--btn) * 0.095); font-weight: 600; line-height: 1.1; letter-spacing: -0.005em; word-break: keep-all; }
+.arg .sub { color: var(--tenue); font-size: calc(var(--btn) * 0.06); line-height: 1.1; font-weight: 500; }
+.arg .marca { min-height: calc(var(--btn) * 0.065); font-size: calc(var(--btn) * 0.05); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0; line-height: 1; }
+
+/* Estados */
+.arg.activo { background: var(--acento); border-color: var(--acento); color: var(--acento-ink); }
+.arg.activo .num, .arg.activo .sub { color: rgba(29,22,7,0.66); }
+.arg.activo .marca { opacity: 0.8; }
+.arg.activo.pausado { background: var(--superficie); color: var(--acento); border-color: var(--acento); }
+.arg.activo.pausado .num, .arg.activo.pausado .sub { color: var(--tenue); }
+.arg.activo.pausado .marca { opacity: 1; }
+
+/* ---------- Footer ---------- */
+.pie {
+  width: 100%; max-width: 100%;
+  padding: 8px 12px 12px;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.estado { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; min-height: 16px; }
+.estado-titulo { color: var(--texto); font-size: clamp(10px, 2.8vw, 11.5px); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.estado-tiempo { color: var(--tenue); font-size: clamp(9px, 2.5vw, 10.5px); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.progreso { height: 2px; margin-top: 6px; background: var(--linea); border-radius: 2px; overflow: hidden; }
+.progreso-barra { width: 0; height: 100%; background: var(--acento); }
+.ayuda { margin-top: 7px; color: #6f8097; font-size: clamp(8px, 2.2vw, 9.5px); line-height: 1.4; text-align: center; }
+
+/* ---------- Modo Flotante ---------- */
+body.floating {
+  background: transparent !important;
+  padding: 0 !important;
+}
+body.floating .cabecera { display: none; }
+body.floating .pie { display: none; }
+
+/* Grid en modo flotante: CSS Grid con scroll interno drag-to-scroll */
+body.floating .grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols-portrait), var(--btn));
+  gap: var(--gap);
+  justify-content: center;
+  align-content: start;
+  padding: calc(var(--float-bar-h) + var(--gap)) var(--gap) var(--gap);
+  width: 100%;
+  max-width: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+body.floating .grid:active { cursor: grabbing; }
+body.floating .grid::-webkit-scrollbar { display: none; }
+
+/* Modo compacto + flotante */
+body.floating.compact .grid {
+  align-content: center;
+  padding: calc(var(--float-bar-h) + var(--gap)) var(--gap) var(--gap);
+}
+
+/* ---------- Responsive ---------- */
+@media (min-height: 700px) and (orientation: portrait) {
+  :root { --cols-portrait: 4; --btn: min(22vw, 12vh, 110px); }
+}
+@media (orientation: landscape) {
+  :root { --cols-portrait: 5; --btn: min(16vw, 24vh, 100px); }
+}
+@media (orientation: landscape) and (min-width: 900px) {
+  :root { --cols-portrait: 6; --btn: min(14vw, 22vh, 95px); }
+}
+@media (max-height: 580px) { :root { --btn: min(26vw, 16vh, 100px); } }
+
+/* Ocultar controles flotantes en impresión */
+@media print { .float-bar, .float-trigger { display: none !important; } }
