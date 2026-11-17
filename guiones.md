@@ -225,6 +225,6 @@ La prior es lo que creés antes de ver la evidencia. La posterior es lo que cre�
 ## 32 - TAI: población, muestra, variable
 *U1*
 
-En el TAI de la EPH Gran Córdoba: la población son los hogares del aglomerado 13. La muestra son los 330 hogares del archivo. Cada hogar es la unidad elemental. La variable depende del análisis: ingreso, tipo de vivienda, lo que estés estudiando.
+En el TAI de la EPH Gran Rosario: la población son los hogares del aglomerado 4. La muestra son los 330 hogares del archivo. Cada hogar es la unidad elemental. La variable depende del análisis: ingreso total familiar (ITF), tipo de vivienda (IV1), régimen de tenencia (II7), lo que estés estudiando.
 
 ---
