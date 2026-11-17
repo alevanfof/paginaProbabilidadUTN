@@ -5,27 +5,26 @@ Widget de estudio para el coloquio del primer parcial (Unidades 1 y 2).
 
 ---
 
-## 📁 Estructura del proyecto
+## 📁 Estructura del repo (root = deploy Vercel)
 
 ```
-coloquio_parcial1/
-├── index.html                 # Versión desktop (Electron)
-├── index.mobile.html          # Versión móvil PWA (HTTPS)
-├── index.mobile.js            # Lógica PWA
-├── styles.mobile.css          # Estilos móviles
-├── app.js                     # Lógica desktop
-├── styles.css                 # Estilos desktop
-├── electron-main.js           # Ventana Electron nativa
-├── package.json               # Dependencias Electron
-├── tracks.js                  # Manifiesto de audios (archivo: "audio/XX.mp3")
-├── guiones.json               # Textos fuente para TTS
-├── generar_audio.py           # Generador de audios (edge-tts)
-├── sw.js                      # Service Worker (offline PWA)
-├── manifest.webmanifest       # PWA manifest
+paginaProbabilidadUTN/
+├── index.html                    # Versión desktop (Electron)
+├── index.mobile.html             # Versión móvil PWA (HTTPS)
+├── app.js / app.mobile.js        # Lógica desktop / móvil
+├── styles.css / styles.mobile.css
+├── electron-main.js              # Ventana Electron nativa
+├── package.json                  # Dependencias Electron
+├── tracks.js                     # Manifiesto de audios (archivo: "audio/XX.mp3")
+├── guiones.json                  # Textos fuente para TTS
+├── generar_audio.py              # Generador de audios (edge-tts)
+├── sw.js                         # Service Worker (offline PWA)
+├── manifest.webmanifest          # PWA manifest
 ├── coloquio_parcial1_CELULAR.html  # HTML único offline (base64, 4 MB)
 ├── coloquio_parcial1_OFFLINE.html  # Versión anterior base64
-├── audio/                     # 32 archivos .mp3 (01.mp3 … 32.mp3)
-└── icons/                     # Iconos PWA (SVG)
+├── test_grid.html                # Test visual del grid
+├── audio/                        # 32 archivos .mp3 (01.mp3 … 32.mp3)
+└── icons/                        # Iconos PWA (SVG)
 ```
 
 ---
@@ -34,15 +33,14 @@ coloquio_parcial1/
 
 ### Desktop (Electron)
 ```bash
-cd coloquio_parcial1
 npm install
 npm start
 ```
 Ventana nativa, transparente, always-on-top, barra arrastrable completa, drag-to-scroll, gestos tap/hold/swipe.
 
 ### Móvil (PWA — requiere HTTPS)
-1. Desplegar en **Vercel / Netlify / GitHub Pages / Firebase** (carpeta `coloquio_parcial1/` como root).
-2. Abrir `https://tu-dominio/index.mobile.html` en Chrome Android.
+1. **Deploy en Vercel**: conectar este repo (`alevanfof/paginaProbabilidadUTN`), Root Directory = `.` (raíz).
+2. Abrir `https://tu-dominio.vercel.app/index.mobile.html` en Chrome Android.
 3. Menú ⋮ → **"Instalar app"** / **"Añadir a pantalla de inicio"**.
 4. Funciona offline (Service Worker cachea audios y assets).
 
@@ -95,10 +93,9 @@ Ventana nativa, transparente, always-on-top, barra arrastrable completa, drag-to
 
 ---
 
-## 🔧 Regenerar audios
+## 🔧 Regenerar audios (local)
 
 ```bash
-cd coloquio_parcial1
 # Requiere: pip install edge-tts
 python generar_audio.py          # Genera audio/ + tracks.js + guiones.md
 python generar_audio.py --texto  # Solo regenera tracks.js y guiones.md
@@ -110,32 +107,19 @@ python generar_audio.py --texto  # Solo regenera tracks.js y guiones.md
 
 ---
 
-## 📦 Deploy en Vercel (recomendado)
+## 📦 Deploy en Vercel
 
-```bash
-# Desde la raíz del repo (paginaProbabilidadUTN/)
-npx vercel
-# Framework: Other
-# Build command: (vacío)
-# Output directory: coloquio_parcial1
-```
-
-O arrastrar la carpeta `coloquio_parcial1/` a https://app.netlify.com/drop
-
----
-
-## 📍 Repo origen
-
-```
-https://github.com/alevanfof/paginaProbabilidadUTN.git
-```
-
-Subcarpeta: `coloquio_parcial1/` — aislada del resto del repo.
+1. https://vercel.com/new → Import `alevanfof/paginaProbabilidadUTN`
+2. **Framework Preset:** Other
+3. **Root Directory:** `.` (raíz del repo)
+4. **Build Command:** (vacío)
+5. **Output Directory:** (vacío)
+6. Deploy
 
 ---
 
 ## 📝 Notas
 
-- **No hay consejos ni guías de estudio** en los audios: solo definiciones, teoremas, clasificaciones y fórmulas.
+- **Sin consejos ni guías** en los audios: solo definiciones, teoremas, clasificaciones y fórmulas.
 - **R (lenguaje) no incluido** — no lo toman en el parcial.
 - Audios generados con **Edge TTS** (Microsoft), calidad nativa, no Web Speech API.
