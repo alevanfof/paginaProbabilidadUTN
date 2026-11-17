@@ -228,3 +228,101 @@ La prior es lo que creés antes de ver la evidencia. La posterior es lo que cre�
 En el TAI de la EPH Gran Rosario: la población son los hogares del aglomerado 4. La muestra son los 330 hogares del archivo. Cada hogar es la unidad elemental. La variable depende del análisis: ingreso total familiar (ITF), tipo de vivienda (IV1), régimen de tenencia (II7), lo que estés estudiando.
 
 ---
+
+## 33 - Variable aleatoria discreta: función de probabilidad, esperanza, varianza
+*U3*
+
+Una variable aleatoria discreta asigna un número a cada resultado del espacio muestral. Su función de probabilidad f(x) da la probabilidad de cada valor posible: suma f(x) = 1. La esperanza E(X) es el promedio ponderado: suma x·f(x). La varianza Var(X) mide dispersión: E(X²) - [E(X)]². El desvío es la raíz de la varianza.
+
+---
+
+## 34 - Distribución Binomial: n ensayos, p éxito, media np, varianza npq
+*U3*
+
+Binomial modela n ensayos independientes e idénticos con dos resultados: éxito (probabilidad p) y fracaso (q=1-p). La variable X = número de éxitos en n ensayos. f(x) = C(n,x)·pˣ·qⁿ⁻ˣ para x=0,1,...,n. Media = n·p. Varianza = n·p·q. Desvío = √(n·p·q). Se usa cuando: ensayos fijos, independientes, dos resultados, p constante.
+
+---
+
+## 35 - Distribución Hipergeométrica: población finita, sin reposición, N, K, n
+*U3*
+
+Hipergeométrica modela extracciones sin reposición de una población finita de N elementos, donde K son 'éxitos' y se extraen n. La variable X = éxitos en la muestra. f(x) = C(K,x)·C(N-K,n-x) / C(N,n). Media = n·K/N. Varianza = n·K/N·(N-K)/N·(N-n)/(N-1). El factor (N-n)/(N-1) es el factor de corrección por población finita. Se usa cuando: sin reposición, población finita.
+
+---
+
+## 36 - Distribución Poisson: eventos raros, lambda, media=varianza=lambda
+*U3*
+
+Poisson modela número de eventos raros en un intervalo fijo (tiempo, espacio) con tasa constante lambda. f(x) = e⁻ˡ·λˣ / x! para x=0,1,2,... Media = λ. Varianza = λ. Desvío = √λ. Se usa cuando: eventos independientes, tasa constante, probabilidad de más de un evento en intervalo chico es despreciable. Aproxima a Binomial cuando n grande, p chico (np = λ).
+
+---
+
+## 37 - Aproximación Normal a Binomial y Poisson: corrección de continuidad
+*U3*
+
+Binomial se aproxima a Normal si n·p > 5 y n·q > 5. Media = np, desvío = √(npq). Poisson se aproxima a Normal si λ > 10. Media = λ, desvío = √λ. Corrección de continuidad: para P(X ≤ k) usar P(X < k+0.5); P(X ≥ k) usar P(X > k-0.5); P(X = k) usar P(k-0.5 < X < k+0.5). Estandarizar Z = (x - μ) / σ y usar tabla Normal estándar.
+
+---
+
+## 38 - Variable aleatoria continua: función de densidad, Normal estándar Z
+*U3*
+
+Variable continua toma infinitos valores en un intervalo. Su función de densidad f(x) ≥ 0 y el área total bajo la curva = 1. La probabilidad es área bajo la curva: P(a < X < b) = ∫ f(x) dx. Normal estándar Z ~ N(0,1): media 0, desvío 1. Cualquier X ~ N(μ,σ) se estandariza: Z = (X - μ) / σ. Tabla Z da P(Z < z).
+
+---
+
+## 39 - Distribución muestral de la media: Teorema Central del Límite
+*U4*
+
+La distribución muestral de la media describe cómo varía x̄ entre muestras. Teorema Central del Límite: para n ≥ 30, x̄ ~ N(μ, σ/√n) aproximadamente, sin importar la forma de la población. Si la población es Normal, x̄ es exactamente Normal para cualquier n. Error estándar = σ/√n (si σ conocido) o s/√n (si σ desconocido).
+
+---
+
+## 40 - Estimación puntual vs intervalar: intervalo de confianza para media y proporción
+*U4*
+
+Estimación puntual: un solo valor (x̄ para μ, p̂ para p). Estimación intervalar: rango con nivel de confianza 1-α. Intervalo para media (σ conocido): x̄ ± Zα/2 · σ/√n. Intervalo para media (σ desconocido, n<30): x̄ ± tα/2,n-1 · s/√n. Intervalo para proporción: p̂ ± Zα/2 · √(p̂q̂/n). Nivel de confianza típico: 90%, 95%, 99%.
+
+---
+
+## 41 - Nivel de confianza, margen de error, tamaño de muestra
+*U4*
+
+Nivel de confianza 1-α: probabilidad de que el intervalo cubra el parámetro. Margen de error E = valor crítico · error estándar. Tamaño de muestra para media: n = (Zα/2 · σ / E)² (redondear al entero superior). Para proporción: n = (Zα/2)² · p̂q̂ / E² (usar p̂=0.5 si no hay info previa, maximiza n).
+
+---
+
+## 42 - Contraste de hipótesis: nula, alternativa, estadístico, región crítica
+*U4*
+
+Hipótesis nula H₀: afirma igualdad o status quo (μ = μ₀). Hipótesis alternativa H₁: lo que se quiere probar (μ ≠ μ₀ bilateral; μ > μ₀ o μ < μ₀ unilateral). Estadístico de prueba: Z = (x̄ - μ₀) / (σ/√n) o t = (x̄ - μ₀) / (s/√n). Región crítica: valores del estadístico que llevan a rechazar H₀. Valor crítico Zα/2 o tα/2 separa región de aceptación y rechazo.
+
+---
+
+## 43 - Errores Tipo I y II, nivel de significancia alpha, p-value
+*U4*
+
+Error Tipo I (α): rechazar H₀ siendo verdadera. Nivel de significancia α = P(Error Tipo I). Error Tipo II (β): no rechazar H₀ siendo falsa. Potencia = 1-β = P(rechazar H₀ | H₀ falsa). p-value: probabilidad de obtener un resultado tan extremo o más, asumiendo H₀ verdadera. Decisión: si p-value < α → rechazar H₀; si p-value ≥ α → no rechazar H₀.
+
+---
+
+## 44 - Potencia del test, relación con n y tamaño de efecto
+*U4*
+
+Potencia = 1-β aumenta con: n más grande, α más grande, tamaño de efecto mayor (diferencia real mayor), σ menor. Tamaño de efecto Cohen's d = |μ - μ₀| / σ. Para diseñar estudio: fijar α, potencia deseada (0.8 o 0.9), estimar σ y tamaño de efecto esperado → calcular n necesario. Trade-off: α vs β, n vs costo.
+
+---
+
+## 45 - Contraste para media (Z/t), proporción, varianza (chi-cuadrado)
+*U4*
+
+Media σ conocido: Z = (x̄ - μ₀) / (σ/√n). Media σ desconocido: t = (x̄ - μ₀) / (s/√n) con n-1 gl. Proporción: Z = (p̂ - p₀) / √(p₀q₀/n) (requiere np₀>5, nq₀>5). Varianza: χ² = (n-1)s² / σ₀² con n-1 gl (población Normal). Dos medias independientes: t o Z según σ conocidas. Dos medias pareadas: t sobre diferencias d̄.
+
+---
+
+## 46 - Contraste de dos medias (independientes/pareadas) y dos proporciones
+*U4*
+
+Dos medias independientes (σ desconocidas, varianzas iguales): t = (x̄₁ - x̄₂) / sₚ·√(1/n₁+1/n₂) con sₚ² = [(n₁-1)s₁²+(n₂-1)s₂²]/(n₁+n₂-2) y n₁+n₂-2 gl. Varianzas desiguales (Welch): t con gl ajustados. Dos medias pareadas: t = d̄ / (s_d/√n) con n-1 gl. Dos proporciones: Z = (p̂₁ - p̂₂) / √(p̂p̂q̂(1/n₁+1/n₂)) con p̂p̂ = (x₁+x₂)/(n₁+n₂).
+
+---

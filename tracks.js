@@ -191,5 +191,89 @@ window.PISTAS = [
     "titulo": "TAI: población, muestra, variable",
     "subtitulo": "U1",
     "archivo": "audio/32.mp3"
+  },
+  {
+    "id": "33",
+    "titulo": "Variable aleatoria discreta: función de probabilidad, esperanza, varianza",
+    "subtitulo": "U3",
+    "archivo": "audio/33.mp3"
+  },
+  {
+    "id": "34",
+    "titulo": "Distribución Binomial: n ensayos, p éxito, media np, varianza npq",
+    "subtitulo": "U3",
+    "archivo": "audio/34.mp3"
+  },
+  {
+    "id": "35",
+    "titulo": "Distribución Hipergeométrica: población finita, sin reposición, N, K, n",
+    "subtitulo": "U3",
+    "archivo": "audio/35.mp3"
+  },
+  {
+    "id": "36",
+    "titulo": "Distribución Poisson: eventos raros, lambda, media=varianza=lambda",
+    "subtitulo": "U3",
+    "archivo": "audio/36.mp3"
+  },
+  {
+    "id": "37",
+    "titulo": "Aproximación Normal a Binomial y Poisson: corrección de continuidad",
+    "subtitulo": "U3",
+    "archivo": "audio/37.mp3"
+  },
+  {
+    "id": "38",
+    "titulo": "Variable aleatoria continua: función de densidad, Normal estándar Z",
+    "subtitulo": "U3",
+    "archivo": "audio/38.mp3"
+  },
+  {
+    "id": "39",
+    "titulo": "Distribución muestral de la media: Teorema Central del Límite",
+    "subtitulo": "U4",
+    "archivo": "audio/39.mp3"
+  },
+  {
+    "id": "40",
+    "titulo": "Estimación puntual vs intervalar: intervalo de confianza para media y proporción",
+    "subtitulo": "U4",
+    "archivo": "audio/40.mp3"
+  },
+  {
+    "id": "41",
+    "titulo": "Nivel de confianza, margen de error, tamaño de muestra",
+    "subtitulo": "U4",
+    "archivo": "audio/41.mp3"
+  },
+  {
+    "id": "42",
+    "titulo": "Contraste de hipótesis: nula, alternativa, estadístico, región crítica",
+    "subtitulo": "U4",
+    "archivo": "audio/42.mp3"
+  },
+  {
+    "id": "43",
+    "titulo": "Errores Tipo I y II, nivel de significancia alpha, p-value",
+    "subtitulo": "U4",
+    "archivo": "audio/43.mp3"
+  },
+  {
+    "id": "44",
+    "titulo": "Potencia del test, relación con n y tamaño de efecto",
+    "subtitulo": "U4",
+    "archivo": "audio/44.mp3"
+  },
+  {
+    "id": "45",
+    "titulo": "Contraste para media (Z/t), proporción, varianza (chi-cuadrado)",
+    "subtitulo": "U4",
+    "archivo": "audio/45.mp3"
+  },
+  {
+    "id": "46",
+    "titulo": "Contraste de dos medias (independientes/pareadas) y dos proporciones",
+    "subtitulo": "U4",
+    "archivo": "audio/46.mp3"
   }
 ];
