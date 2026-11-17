@@ -1,7 +1,7 @@
-# Coloquio Parcial 1 — Probabilidad y Estadística (UTN)
+# Coloquio Parcial 2do Parcial — Probabilidad y Estadística (UTN)
 
-Widget de estudio para el coloquio del primer parcial (Unidades 1 y 2).  
-32 preguntas con respuestas teóricas puras, audio generado con **Edge TTS voz argentina** (`es-AR-ElenaNeural`).
+Widget de estudio para el coloquio del **segundo parcial (Unidades 1, 2, 3 y 4)**.  
+**46 preguntas** con respuestas teóricas puras, audio generado con **Edge TTS voz argentina** (`es-AR-ElenaNeural`).
 
 ---
 
@@ -20,11 +20,10 @@ paginaProbabilidadUTN/
 ├── generar_audio.py              # Generador de audios (edge-tts)
 ├── sw.js                         # Service Worker (offline PWA)
 ├── manifest.webmanifest          # PWA manifest
-├── coloquio_parcial1_CELULAR.html  # HTML único offline (base64, 4 MB)
-├── coloquio_parcial1_OFFLINE.html  # Versión anterior base64
-├── test_grid.html                # Test visual del grid
-├── audio/                        # 32 archivos .mp3 (01.mp3 … 32.mp3)
-└── icons/                        # Iconos PWA (SVG)
+├── coloquio_parcial1_CELULAR.html  # HTML único offline (base64, 8 MB)
+├── audio/                        # 46 archivos .mp3 (01.mp3 … 46.mp3)
+├── icons/                        # Iconos PWA (SVG)
+└── README.md
 ```
 
 ---
@@ -44,16 +43,16 @@ Ventana nativa, transparente, always-on-top, barra arrastrable completa, drag-to
 3. Menú ⋮ → **"Instalar app"** / **"Añadir a pantalla de inicio"**.
 4. Funciona offline (Service Worker cachea audios y assets).
 
-### Móvil offline (archivo único, 4 MB)
+### Móvil offline (archivo único, 8 MB)
 - Copiar `coloquio_parcial1_CELULAR.html` al celular.
 - Abrir con Chrome: `file:///storage/emulated/0/Download/coloquio_parcial1_CELULAR.html`
-- **32 botones en grid 2 columnas**, audios embebidos en base64, sin red.
+- **46 botones en grid 2 columnas**, audios embebidos en base64, sin red.
 
 ---
 
-## 🎯 Contenido (32 tracks)
+## 🎯 Contenido (46 tracks)
 
-**Unidad 1 — Estadística descriptiva (1–17)**
+### Unidad 1 — Estadística descriptiva (1–17)
 1. Población vs Muestra  
 2. Muestra representativa  
 3. Variable estadística  
@@ -72,7 +71,7 @@ Ventana nativa, transparente, always-on-top, barra arrastrable completa, drag-to
 16. Gráficos: barras vs histograma  
 17. Boxplot y atípicos  
 
-**Unidad 2 — Probabilidad (18–31)**
+### Unidad 2 — Probabilidad (18–31)
 18. Combinatorio: tres preguntas clave  
 19. Permutación, variación, combinación  
 20. Experimento aleatorio y espacio muestral  
@@ -88,8 +87,26 @@ Ventana nativa, transparente, always-on-top, barra arrastrable completa, drag-to
 30. Tabla doble entrada: simple, intersección, condicional  
 31. Prior vs Posterior en Bayes  
 
-**TAI**
-32. TAI: población, muestra, variable (EPH Gran Córdoba)
+### Unidad 3 — Distribuciones de probabilidad (32–38)
+32. Variable aleatoria discreta: función de probabilidad, esperanza, varianza  
+33. Distribución Binomial: n ensayos, p éxito, media np, varianza npq  
+34. Distribución Hipergeométrica: población finita, sin reposición, N, K, n  
+35. Distribución Poisson: eventos raros, lambda, media=varianza=lambda  
+36. Aproximación Normal a Binomial y Poisson: corrección de continuidad  
+37. Variable aleatoria continua: función de densidad, Normal estándar Z  
+
+### Unidad 4 — Inferencia estadística (39–46)
+38. Distribución muestral de la media: Teorema Central del Límite  
+39. Estimación puntual vs intervalar: intervalo de confianza para media y proporción  
+40. Nivel de confianza, margen de error, tamaño de muestra  
+41. Contraste de hipótesis: nula, alternativa, estadístico, región crítica  
+42. Errores Tipo I y II, nivel de significancia alpha, p-value  
+43. Potencia del test, relación con n y tamaño de efecto  
+44. Contraste para media (Z/t), proporción, varianza (chi-cuadrado)  
+45. Contraste de dos medias (independientes/pareadas) y dos proporciones  
+
+### TAI
+46. TAI: población, muestra, variable (EPH Gran Rosario, aglomerado 4)
 
 ---
 
@@ -112,8 +129,8 @@ python generar_audio.py --texto  # Solo regenera tracks.js y guiones.md
 1. https://vercel.com/new → Import `alevanfof/paginaProbabilidadUTN`
 2. **Framework Preset:** Other
 3. **Root Directory:** `.` (raíz del repo)
-4. **Build Command:** (vacío)
-5. **Output Directory:** (vacío)
+4. Build Command: (vacío)
+5. Output Directory: (vacío)
 6. Deploy
 
 ---
@@ -123,3 +140,4 @@ python generar_audio.py --texto  # Solo regenera tracks.js y guiones.md
 - **Sin consejos ni guías** en los audios: solo definiciones, teoremas, clasificaciones y fórmulas.
 - **R (lenguaje) no incluido** — no lo toman en el parcial.
 - Audios generados con **Edge TTS** (Microsoft), calidad nativa, no Web Speech API.
+- TAI corregido: **Gran Rosario (aglomerado 4)**, 330 hogares.
