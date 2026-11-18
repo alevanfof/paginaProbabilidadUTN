@@ -243,31 +243,31 @@ Binomial modela n ensayos independientes e idénticos con dos resultados: éxito
 
 ---
 
-## 35 - Distribución Hipergeométrica: población finita, sin reposición, N, K, n
+## 35 - Distribución Hipergeométrica: población finita, sin reposición
 *U3*
 
-Hipergeométrica modela extracciones sin reposición de una población finita de N elementos, donde K son 'éxitos' y se extraen n. La variable X = éxitos en la muestra. f(x) = C(K,x)·C(N-K,n-x) / C(N,n). Media = n·K/N. Varianza = n·K/N·(N-K)/N·(N-n)/(N-1). El factor (N-n)/(N-1) es el factor de corrección por población finita. Se usa cuando: sin reposición, población finita.
+Corresponde hipergeométrica cuando la muestra se extrae de una población finita y la composición cambia en cada selección, o sea, sin reposición. En el TAI: 330 hogares forman la población, 70 son inquilinos, se eligen 15 sin reposición. La variable X es la cantidad de inquilinos seleccionados. La fórmula usa combinatorios: f(x) = C(K,x)·C(N-K,n-x) / C(N,n). Media = n·K/N. El factor (N-n)/(N-1) corrige por población finita. Se usa siempre que muestrees sin reposición de una población finita.
 
 ---
 
-## 36 - Distribución Poisson: eventos raros, lambda, media=varianza=lambda
+## 36 - Distribución Poisson: conteos en el tiempo, tasa constante
 *U3*
 
-Poisson modela número de eventos raros en un intervalo fijo (tiempo, espacio) con tasa constante lambda. f(x) = e⁻ˡ·λˣ / x! para x=0,1,2,... Media = λ. Varianza = λ. Desvío = √λ. Se usa cuando: eventos independientes, tasa constante, probabilidad de más de un evento en intervalo chico es despreciable. Aproxima a Binomial cuando n grande, p chico (np = λ).
+Uso Poisson para conteos de ocurrencias en un intervalo con tasa promedio constante e independencia. En el TAI: el servidor del INDEC recibe 12 formularios por hora en promedio. X cuenta llegadas en el intervalo. La clave es ajustar lambda al intervalo: 15 minutos → λ=3; 30 minutos → λ=6; 45 minutos → λ=9. Fórmula: f(x) = e⁻ˡ·λˣ / x!. Media = λ, varianza = λ, desvío = √λ. Se usa para conteos en tiempo/espacio con tasa constante.
 
 ---
 
 ## 37 - Aproximación Normal a Binomial y Poisson: corrección de continuidad
 *U3*
 
-Binomial se aproxima a Normal si n·p > 5 y n·q > 5. Media = np, desvío = √(npq). Poisson se aproxima a Normal si λ > 10. Media = λ, desvío = √λ. Corrección de continuidad: para P(X ≤ k) usar P(X < k+0.5); P(X ≥ k) usar P(X > k-0.5); P(X = k) usar P(k-0.5 < X < k+0.5). Estandarizar Z = (x - μ) / σ y usar tabla Normal estándar.
+Binomial se aproxima a Normal si n·p > 5 y n·q > 5. Media = np, desvío = √(npq). Poisson se aproxima a Normal si λ > 10. Media = λ, desvío = √λ. Corrección de continuidad: para P(X ≤ k) usar P(X < k+0.5); P(X ≥ k) usar P(X > k-0.5); P(X = k) usar P(k-0.5 < X < k+0.5). Estandarizar Z = (x - μ) / σ y usar tabla Normal estándar. En síntesis: la Normal aproxima a Binomial y Poisson cuando los parámetros son grandes.
 
 ---
 
-## 38 - Variable aleatoria continua: función de densidad, Normal estándar Z
+## 38 - Variable aleatoria continua: Normal, áreas bajo la curva
 *U3*
 
-Variable continua toma infinitos valores en un intervalo. Su función de densidad f(x) ≥ 0 y el área total bajo la curva = 1. La probabilidad es área bajo la curva: P(a < X < b) = ∫ f(x) dx. Normal estándar Z ~ N(0,1): media 0, desvío 1. Cualquier X ~ N(μ,σ) se estandariza: Z = (X - μ) / σ. Tabla Z da P(Z < z).
+La Normal representa las áreas de una variable continua: la probabilidad es el área bajo la curva de densidad. Variable continua toma infinitos valores; f(x) ≥ 0 y área total = 1. P(a < X < b) = área bajo la curva. Normal estándar Z ~ N(0,1): media 0, desvío 1. Cualquier X ~ N(μ,σ) se estandariza: Z = (X - μ) / σ. Tabla Z da P(Z < z). En síntesis: hipergeométrica = sin reposición; Normal = áreas continuo; Poisson = conteos tasa constante.
 
 ---
 

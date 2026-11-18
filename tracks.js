@@ -206,13 +206,13 @@ window.PISTAS = [
   },
   {
     "id": "35",
-    "titulo": "Distribución Hipergeométrica: población finita, sin reposición, N, K, n",
+    "titulo": "Distribución Hipergeométrica: población finita, sin reposición",
     "subtitulo": "U3",
     "archivo": "audio/35.mp3"
   },
   {
     "id": "36",
-    "titulo": "Distribución Poisson: eventos raros, lambda, media=varianza=lambda",
+    "titulo": "Distribución Poisson: conteos en el tiempo, tasa constante",
     "subtitulo": "U3",
     "archivo": "audio/36.mp3"
   },
@@ -224,7 +224,7 @@ window.PISTAS = [
   },
   {
     "id": "38",
-    "titulo": "Variable aleatoria continua: función de densidad, Normal estándar Z",
+    "titulo": "Variable aleatoria continua: Normal, áreas bajo la curva",
     "subtitulo": "U3",
     "archivo": "audio/38.mp3"
   },
